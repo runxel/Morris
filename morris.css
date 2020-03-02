@@ -1,0 +1,233 @@
+@charset "UTF-8";
+/*! morris.css v1.0.0
+ * MIT License
+ * Lucas Becker
+ * <https://github.com/runxel/Morris>
+ */
+
+:root {
+  --font: Georgia, Palatino, 'Palatino Linotype', serif;
+  --font-header: var(--font);
+  --font-monospace: Consolas, monospace;
+  --hilight: rgb(240, 180, 15);
+  --txt-color-web: rgb(29, 29, 29);
+  --color-links: rgb(59, 128, 168);
+}
+
+::selection {
+  background-color: var(--hilight);
+  color: var(--txt-color-web);
+  text-shadow: none;
+}
+
+html {
+  font-size: 100%;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+body {
+  color: var(--txt-color-web);
+  font-family: var(--font);
+  font-size: 18px;
+  line-height: 1.7;
+  padding: 1em;
+  margin: auto;
+  max-width: 42em;
+  background: #fefefe;
+}
+
+a {
+  color: var(--color-links);
+}
+a.footnote-back {
+  padding-left: 0.5em;
+}
+
+img {
+  /* prevent images from overflowing */
+  max-width: 100% !important;
+}
+
+header {
+  /* the items from the YAML metadata block will be displayed in a header element */
+  display: none; /* you might not want to see it */
+}
+
+ul, ol {
+  /* margin: 0;
+  padding: 0; */
+}
+
+hr {
+  margin: 2.2rem 0.3rem;
+}
+
+table {
+  margin-bottom: 30px;
+  width: 100%;
+  text-align: left;
+  color: #3f3f3f;
+  border-collapse: collapse;
+  border: 1px solid #e8e8e8;
+  box-shadow: 0 0.7px 2.4px -16px rgba(0,0,0,0.001),
+            0 1.7px 5.4px -16px rgba(0,0,0,0.003),
+            0 3px 9.3px -16px rgba(0,0,0,0.005),
+            0 5px 15px -16px rgba(0,0,0,0.008),
+            0 8.2px 24px -16px rgba(0,0,0,0.013),
+            0 14.3px 40.5px -16px rgba(0,0,0,0.019),
+            0 31px 84px -16px rgba(0,0,0,0.03);
+}
+table th {
+  background-color:#f0f0f0;
+  border: 1px solid#dedede;
+  border-bottom-color: rgb(222, 222, 222);
+  border-bottom-color:#c9c9c9;
+}
+table td {
+  border: 1px solid #e8e8e8;
+}
+table th, table td {
+  padding: 10px 15px;
+}
+table tr:nth-child(2n) {
+  background-color: #f7f7f7;
+}
+
+sup, sub {
+  vertical-align: baseline;
+  position: relative;
+  font-size: 0.6em;
+  top: -0.8em;
+}
+sub { 
+  top: 0.3em; 
+}
+a > sup {
+  font-size: 0.8em;
+  top: -0.6em;
+}
+
+kbd {
+  background-color:#fafbfc;
+  border: 1px solid#c6cbd1;
+  border-bottom-color: rgb(198, 203, 209);
+  border-bottom-color:#959da5;
+  border-radius: 4px;
+  box-shadow: inset 0 -1px 0#959da5;
+  color:#444d56;
+  display: inline-block;
+  padding: 0px 5px;
+  vertical-align: middle;
+  font-size: 80%;
+  position: relative;
+  bottom: 3px;
+}
+
+/* CODE */
+code,
+kbd,
+pre.sourceCode {
+  font-family: var(--font-monospace);
+}
+p code {
+  padding: 0 0.5em;
+}
+pre.sourceCode {
+  background: rgba(0, 0, 0, 0.035);
+  border-radius: 0.1rem;
+  padding: 0.5rem;
+}
+code span.va { /* Booleans */
+  color: rgb(245, 164, 14);
+}
+code span.co { /* Comments */
+  color: rgba(0, 0, 0, 0.555);
+}
+code span.op { /* Operators */
+  color: rgb(40, 165, 165);
+}
+code span.kw { /* Keywords */
+  color: rgb(79, 158, 92);
+}
+code span.cf { /* cf */
+  color: rgb(89, 73, 163);
+}
+
+/* """"""""""""""""""""""""""""""""""""""
+ * The part important for creating a PDF.
+ */
+@media print {
+  @page {
+    size: A4; 
+      /* 'legal' if you're in the US 
+       * you set page orientation by either
+       * 'portrait' or 'landscape'
+       */
+    margin: 15mm;
+
+  }
+  
+  body {
+    background: transparent !important; /* we don't want any color here */
+    color: black !important;
+    font-size: 12pt;
+    max-width: 100%;
+    box-decoration-break: clone; /* boxes should be treated per page */
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  img,
+  pre,
+  code,
+  blockquote,
+  table,
+  figure,
+  ul,
+  ol,
+  li,
+  tr,
+  hr {
+    page-break-before: auto;
+    page-break-after: auto;
+    page-break-inside: avoid;
+    break-before: auto;
+    break-after: auto;
+    break-inside: avoid;
+  }
+
+  pre {
+    white-space: pre-wrap !important;
+    word-wrap: break-word;
+  }
+
+  /* prevent single lines at page end/start */
+  p,
+  a {
+    orphans: 4;
+    widows: 3;
+  }
+
+  /* always cause a page break before an h1 header */
+  h1 {
+    break-before: page;
+  }
+  /* avoid paragraphs being detached from preceding header */
+  h1, h2, h3 {
+    page-break-after: avoid;
+    break-after: avoid-page;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  /* display expansions of abbreviations */
+  abbr[title]:after,
+  acronym[title]:after {
+    content: " (" attr(title) ")";
+  }
+  
+}
