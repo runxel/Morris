@@ -43,8 +43,15 @@ Soon enough you will be ridden with lots of meaningless errors and _man_, insert
 
 Younger and maybe less atrocious is [**Weasyprint**](https://weasyprint.org/).  
 _Caveat for Windows users_: Weasyprint has a horrible and ridiculous way of [installation](https://weasyprint.readthedocs.io/en/stable/install.html#windows) – you have to install the GTK3 runtime…
+
+<sub>
+
 Hint for Miniconda/Anaconda users: Since weasyprint is Python based you might have to activate the right environment first (à la `activate <py3>`).  
-Once you got through the painful installation weasyprint appears to be quite nice and much more usable than wkhtml. If you intend to use the `makefile` you don't need to care anyway, because you need GNU make for that – meaning you should use [Cygwin](https://www.cygwin.com/) or the [Windows Subsystem for Linux WSL](https://docs.microsoft.com/en-us/windows/wsl/install-win10) (Win10 only).
+
+</sub>
+
+Once you got through the painful installation weasyprint appears to be quite nice and much more usable than wkhtml.  
+**If** you intend to use the `makefile` you don't need to care anyway, because you need `GNU make` for that – meaning you should use [Cygwin](https://www.cygwin.com/) or the [Windows Subsystem for Linux WSL](https://docs.microsoft.com/en-us/windows/wsl/install-win10) (Win10 only).
 
 Weasyprint supports CSS' `@page` rules (designed for [paged media](https://www.quackit.com/css/at-rules/css_page_at-rule.cfm) so we can easily pass a custom CSS via the usual Pandoc CLI param:
 
@@ -71,12 +78,9 @@ This project was named in honor of [William Morris](https://en.wikipedia.org/wik
 
 ---
 
-<details>
-<summary>
-
 ## Testing Print Stylesheets
 
-</summary>
+<details>
 
 Testing print stylesheets might seem like a boring task involving of actual printing the page, but there is some possibility of making your live a bit easier:
 
