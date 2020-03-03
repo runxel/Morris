@@ -73,12 +73,16 @@ I _have_ tried to use NMAKE in Windows [by using Qt's _Jom_, a drop-in replaceme
 </sub>
 
 
+## Automation
+If you want to have an auto-conversion taking place everytime you push to your repo: That's possible with [GitHub Actions](https://github.com/pandoc/pandoc-action-example)!
+
+
 ## Trivia
 This project was named in honor of [William Morris](https://en.wikipedia.org/wiki/William_Morris).
 
 ---
 
-## Testing Print Stylesheets
+### Testing Print Stylesheets
 
 <details>
 
