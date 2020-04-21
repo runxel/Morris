@@ -6,7 +6,7 @@
 
 [![license](https://img.shields.io/github/license/runxel/Morris?style=flat-square)]()
 
-Pandoc is an incredible powerful tool – which comes at the cost of being sometimes seemingly too complex.
+Pandoc is an incredibly powerful tool – which comes at the cost of being sometimes seemingly too complex.
 This project aims to lower the hurdles and make document creating an easy thing. Morris provides you with everything you need to quickly generate beatiful documents from your Markdown.
 
 Let's start! It's as easy as:
